@@ -11,7 +11,6 @@ const portalId = 'your portal id here'
 // No need to worry about the below
 const data = []
 const options = []
-let stepIndex = 0
 
 const generateFormOptions = (index) => {
     return {
