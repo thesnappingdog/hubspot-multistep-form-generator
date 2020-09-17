@@ -16,7 +16,7 @@ const generateFormOptions = (index) => {
     return {
         portalId,
         formId: forms[index],
-        target: target,
+        target,
         onFormReady: function(form) {
             if (index !== 0 || index === forms.length - 1) {
                 form.find('input[name="email"]').val(data[0].value).change();
