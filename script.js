@@ -38,10 +38,10 @@ const generateFormOptions = (index) => {
 }
 
 const multiStepForm = () => {
-    forms.forEach((index) => {
+    forms.forEach((form, index) => {
         options.push(generateFormOptions(index));
     })
-    hbspt.forms.create(options[options.length - 1]);
+    hbspt.forms.create(options[0]);
 }
 
 multiStepForm();
