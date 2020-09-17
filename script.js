@@ -4,13 +4,13 @@ const forms = [
     "form id 2",
     "etc",
     "last form id"
-]
-const target = '#multistep-form'
-const portalId = 'your portal id here'
+];
+const portalId = 'your portal id here';
+const target = '#multistep-form';
 
 // No need to worry about stuff below here
-const data = []
-const options = []
+const data = [];
+const options = [];
 
 const generateFormOptions = (index) => {
     return {
@@ -25,13 +25,13 @@ const generateFormOptions = (index) => {
         onFormSubmit: function(form) {
             if (data.length === 0) {
                 const incoming = $(form).serializeArray();
-                data.push(incoming[0])
+                data.push(incoming[0]);
             }
         },
         onFormSubmitted: function() {
             if (index !== forms.length - 1) {
                 $(target).empty();
-                hbspt.forms.create(options[index + 1])
+                hbspt.forms.create(options[index + 1]);
             }
         }
     }
@@ -39,7 +39,7 @@ const generateFormOptions = (index) => {
 
 const multiStepForm = () => {
     forms.forEach((index) => {
-        options.push(generateFormOptions(index))
+        options.push(generateFormOptions(index));
     })
     hbspt.forms.create(options[options.length - 1]);
 }
