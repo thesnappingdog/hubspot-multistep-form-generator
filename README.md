@@ -6,6 +6,7 @@ This code will successfully generate a multistep form, no matter how many steps,
 - Style & Preview > 'Set as a raw HTML form' is enabled
 - Make sure jQuery is loaded on your page
 - Each 'step' is a unique form. Create as many forms as you need.
+- Make sure you use 'Display thank you message' on every form except the last one
 
 ## How:
 
