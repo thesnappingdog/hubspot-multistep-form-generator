@@ -1,4 +1,4 @@
-// Edit the configuration below
+// Edit the configuration then copy paste intro <script> tags
 const forms = [
     "form id 1",
     "form id 2",
@@ -8,7 +8,7 @@ const forms = [
 const target = '#multistep-form'
 const portalId = 'your portal id here'
 
-// No need to worry about the below
+// No need to worry about stuff below here
 const data = []
 const options = []
 
@@ -24,11 +24,11 @@ const generateFormOptions = (index) => {
         },
         onFormSubmit: function(form) {
             if (data.length === 0) {
-                var incoming = $(form).serializeArray();
+                const incoming = $(form).serializeArray();
                 data.push(incoming[0])
             }
         },
-        onFormSubmitted: function(form) {
+        onFormSubmitted: function() {
             if (index !== forms.length - 1) {
                 $(target).empty();
                 hbspt.forms.create(options[index + 1])
