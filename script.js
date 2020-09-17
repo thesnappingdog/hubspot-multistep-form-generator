@@ -34,22 +34,12 @@ const generateFormOptions = (index) => {
                 hbspt.forms.create(options[index + 1])
             }
         }
-
-    }
-}
-
-async function* generator(index) {
-    while (index < forms.length) {
-        yield options.push(generateFormOptions(index))
-        ++index        
     }
 }
 
 const multiStepForm = () => {
-    const formGenerator = generator(0);
-
-    forms.forEach(() => {
-        formGenerator.next();
+    forms.forEach((index) => {
+        options.push(generateFormOptions(index))
     })
     hbspt.forms.create(options[options.length - 1]);
 }
