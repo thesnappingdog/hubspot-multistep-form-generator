@@ -31,7 +31,7 @@ const generateFormOptions = (index) => {
         },
         onFormSubmitted: function(form) {
             if (index !== forms.length - 1) {
-                $('#demo').empty();
+                $(target).empty();
                 hbspt.forms.create(options[index + 1])
             }
         }
