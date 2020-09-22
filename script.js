@@ -8,17 +8,17 @@ const forms = [
 const portalId = 'your portal id here';
 const target = '#multistep-form';
 
-// No need to worry about stuff below here
+// No need to worry about stuff below this point
 const data = [];
 const options = [];
 
-const generateFormOptions = (index) => {
+const generateFormOptions = (form, index) => {
     return {
         portalId,
-        formId: forms[index],
+        formId: form,
         target,
         onFormReady: function(form) {
-            if (index !== 0 || index === forms.length - 1) {
+            if (index !== 0) {
                 form.find('input[name="email"]').val(data[0].value).change();
             }
         },
@@ -39,7 +39,7 @@ const generateFormOptions = (index) => {
 
 const multiStepForm = () => {
     forms.forEach((form, index) => {
-        options.push(generateFormOptions(index));
+        options.push(generateFormOptions(form, index));
     })
     hbspt.forms.create(options[0]);
 }
