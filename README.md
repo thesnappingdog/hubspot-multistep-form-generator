@@ -7,6 +7,7 @@ This code will successfully generate a multistep form, no matter how many steps,
 - Make sure jQuery is loaded on your page
 - Each 'step' is a unique form. Create as many forms as you need.
 - Make sure you use 'Display thank you message' on every form except the last one
+- !! make sure Email is the FIRST question on your initial form. Otherwise you need to push a different index in data.push(incoming[CORRECT_INDEX_HERE]) !! Use console.log(incoming) to troubleshoot your incoming serializeArray data.
 
 ## How:
 
@@ -21,5 +22,6 @@ Todo:
 
 - Transpile code to ES5 and see if it still works
 - Figure out why code breaks when 'Set as a raw HTML form' is disabled
+- Generalise incoming variable to find email key instead of relying on index
 
 Feel free to do a pull request if you have improvements :+1:
